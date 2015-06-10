@@ -96,7 +96,7 @@ public class Fixer {
         Drive service = getDriveService();
 
         // Grab a list of files with the .encrypted extension
-        FileList result = service.files().list().setQ("title contains \".encrypted\"")
+        FileList result = service.files().list().setMaxResults(2000).setQ("title contains \".encrypted\"")
              .execute();
         List<File> files = result.getItems();
 
